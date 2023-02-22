@@ -1,0 +1,30 @@
+<header class="header">List of prohibited words:</header>
+<div class="container">
+  <div class="box">
+    <p class="badwords">
+      Bad words:<span class="redword" *ngFor="let text of redWord">{{
+        text
+      }}</span>
+    </p>
+    <div class="inpBox">
+      <input
+        type="text"
+        [(ngModel)]="writer"
+        class="text"
+        [placeholder]="myPlaceholder"
+        [class]="redBorder"
+        placeholder="word here..."
+      />
+      <input type="button" value="Add" (click)="adder()" class="add" />
+      <input type="button" value="Reset" (click)="reseter()" class="reset" />
+    </div>
+    <textarea
+      class="area"
+      [(ngModel)]="area"
+      [placeholder]="myPlaceholder1"
+      [class]="redBorder1"
+      placeholder="text here..."
+    ></textarea>
+    <button class="cenzor" (click)="cenzors()">Cenzor</button>
+  </div>
+</div>
